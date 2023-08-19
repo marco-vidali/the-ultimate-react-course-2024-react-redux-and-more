@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring
-const book = getBook(2);
+const book = getBook(1);
 
 // const title = book.title;
 // const author = book.author;
@@ -155,4 +155,12 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
 // const primaryGenre = genres[0];
 // const secondaryGenre = genres[1];
 
-const [primaryGenre, secondaryGenre] = genres;
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+const newGenres = [...genres, "epic fantasy"];
+
+const updatedBook = {
+  ...book,
+  pages: 1210,
+  moviePublicationDate: "2001-12-19",
+};
+updatedBook;
