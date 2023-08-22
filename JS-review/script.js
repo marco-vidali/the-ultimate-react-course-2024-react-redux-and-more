@@ -164,3 +164,8 @@ const updatedBook = {
   moviePublicationDate: "2001-12-19",
 };
 updatedBook;
+
+const summary = `${title}, a ${pages}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}`;
+summary;
