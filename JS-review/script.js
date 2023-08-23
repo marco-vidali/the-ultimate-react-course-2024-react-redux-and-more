@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // Destructuring
-const book = getBook(2);
+const book = getBook(1);
 
 // const title = book.title;
 // const author = book.author;
@@ -180,3 +180,21 @@ pagesRange;
 console.log(`The book has ${pagesRange} pages`);
 
 console.log(getYear(publicationDate));
+
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+
+// falsy: 0, "", null, undefined
+console.log(0 && "Some string");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+const spanishTranslation = book.translations.spanish || "NOT TRANSLATED";
+spanishTranslation;
+
+const countWrong = book.reviews.librarything.reviewsCount || "No data";
+countWrong;
+
+const count = book.reviews.librarything.reviewsCount ?? "No data";
+count;
