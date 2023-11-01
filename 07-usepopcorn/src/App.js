@@ -267,12 +267,24 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
   // // if (imdbRating > 8) [isTop, setIsTop] = useState("ciaone");
   // if (imdbRating > 8) return <p>Greatest ever!</p>;
 
+  // const [isTop, setIsTop] = useState(imdbRating > 8);
+  // console.log(isTop);
+
+  // useEffect(() => {
+  //   setIsTop(imdbRating > 8);
+  // }, [imdbRating]);
+
+  const isTop = imdbRating > 8;
+  console.log(isTop);
+
   useEffect(() => {
     if (!title) return;
     document.title = `Movie | ${title}`;
 
     return () => (document.title = "usePopcorn");
   }, [title]);
+
+  // const [avgRating, setAvgRating] = useState(0);
 
   function handleAdd() {
     const newWatchedMovie = {
@@ -286,6 +298,8 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
     };
     onAddWatched(newWatchedMovie);
     onCloseMovie();
+    // setAvgRating(Number(imdbRating));
+    // setAvgRating((avgRating) => (avgRating + userRating) / 2);
   }
 
   useEffect(() => {
@@ -339,6 +353,8 @@ function MovieDetails({ selectedId, watched, onCloseMovie, onAddWatched }) {
               </p>
             </div>
           </header>
+
+          {/* <p>{avgRating}</p> */}
 
           <section>
             <div className="rating">
