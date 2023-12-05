@@ -35,6 +35,18 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "British Antarctic Territory",
+      "country": "Antarctica",
+      "emoji": "🇦🇶",
+      "date": "2023-12-05T16:51:24.631Z",
+      "notes": "Good",
+      "position": {
+        "lat": "-81.41393328285109",
+        "lng": "-23.203125000000004"
+      },
+      "id": 98443198
     }
   ]
 }
