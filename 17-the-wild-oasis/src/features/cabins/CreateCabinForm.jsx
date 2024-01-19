@@ -11,15 +11,6 @@ import { createCabin } from "../../services/apiCabins";
 import toast from "react-hot-toast";
 import FormRow from "../../ui/FormRow";
 
-const Label = styled.label`
-    font-weight: 500;
-`;
-
-const Error = styled.span`
-    font-size: 1.4rem;
-    color: var(--color-red-700);
-`;
-
 function CreateCabinForm() {
     const { register, handleSubmit, reset, getValues, formState } = useForm();
     const { errors } = formState;
@@ -37,11 +28,11 @@ function CreateCabinForm() {
     });
 
     function onSubmit(data) {
-        mutate(data);
+        mutate({ ...data, image: data.image[0] });
     }
 
     function onError(errors) {
-        console.log(errors);
+        // console.log(errors);
     }
 
     return (
@@ -119,7 +110,13 @@ function CreateCabinForm() {
             </FormRow>
 
             <FormRow label="Cabin photo">
-                <FileInput id="image" accept="image/*" disabled={isCreating} />
+                <FileInput
+                    id="image"
+                    accept="image/*"
+                    {...register("image", {
+                        required: "This field is required",
+                    })}
+                />
             </FormRow>
 
             <FormRow>
@@ -127,7 +124,7 @@ function CreateCabinForm() {
                 <Button variation="secondary" type="reset">
                     Cancel
                 </Button>
-                <Button>Add cabin</Button>
+                <Button disabled={isCreating}>Add cabin</Button>
             </FormRow>
         </Form>
     );
