@@ -80,7 +80,7 @@ function Open({ children, opens: opensWindowName }) {
     return cloneElement(children, { onClick: () => open(opensWindowName) });
 }
 
-function Window({ children, name, onClose }) {
+function Window({ children, name }) {
     const { openName, close } = useContext(ModalContext);
     const ref = useCloseModal(close);
 
@@ -92,7 +92,7 @@ function Window({ children, name, onClose }) {
                 <Button onClick={close}>
                     <HiXMark></HiXMark>
                 </Button>
-                <div>{cloneElement(children, { onCloseModal: onClose })}</div>
+                <div>{cloneElement(children, { onCloseModal: close })}</div>
             </StyledModal>
         </Overlay>,
         document.body
