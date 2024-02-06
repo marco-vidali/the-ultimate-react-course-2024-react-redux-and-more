@@ -53,11 +53,6 @@ function CheckinBooking() {
         if (!confirmPaid) return;
 
         if (addBreakfast) {
-            console.log({
-                hasBreakfast: true,
-                extrasPrice: optionalBreakfastPrice,
-                totalPrice: totalPrice + optionalBreakfastPrice,
-            });
             checkIn({
                 bookingId,
                 breakfast: {
