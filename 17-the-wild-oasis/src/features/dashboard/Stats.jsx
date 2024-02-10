@@ -37,7 +37,7 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
                 value={formatCurrency(sales)}
             />
             <Stat
-                title="Check ins"
+                title="Check-ins"
                 color="indigo"
                 icon={<HiOutlineCalendarDays />}
                 value={checkins}
